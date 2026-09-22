@@ -1,7 +1,8 @@
 * {
-margin: 0;
-padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 .center {
     padding-left: 120px;
     padding-right: 120px;
@@ -15,11 +16,13 @@ padding: 0;
     background-size: cover;
     background-repeat: no-repeat;
     color: #202027;
+    box-sizing: border-box;
 
 }
+
 .top-content {
     width: 769px;
-    height: 358px;
+    height: auto;
     padding-top: 196px;
     padding-right: 120px;
     padding-bottom: 156px;
@@ -27,7 +30,7 @@ padding: 0;
 
 .top__wrapper {
     width: 769px;
-    height: 244px;    
+    height: 244px;
     opacity: 1;
     display: flex;
     flex-direction: column;
@@ -88,113 +91,115 @@ padding: 0;
 
 */
 .angle-star {
-  position: absolute;
-  top: 0%;
-  right: 0%;
-  width: 28vw;
-  height: auto;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 28vw;
+    height: auto;
 }
 
 .star-1 {
-  position: absolute;
-  top: 12%;
-  left: 4%;
-  width: 4vw;
-  height: auto;
+    position: absolute;
+    top: 12%;
+    left: 4%;
+    width: 4vw;
+    height: auto;
 }
 
 .star-2 {
-  position: absolute;
-  top: 8.5%;
-  left: 11%;
-  width: 2.5vw;
-  height: auto;
+    position: absolute;
+    top: 8.5%;
+    left: 11%;
+    width: 2.5vw;
+    height: auto;
 }
 
 .star-3 {
-  position: absolute;
-  bottom: 23%;
-  right: 28%;
-  width: 4vw;
-  height: auto;
+    position: absolute;
+    bottom: 23%;
+    right: 28%;
+    width: 4vw;
+    height: auto;
 }
 
 .star-4 {
-  position: absolute;
-  bottom: 31%;
-  right: 34%;
-  width: 2vw;
-  height: auto;
+    position: absolute;
+    bottom: 31%;
+    right: 34%;
+    width: 2vw;
+    height: auto;
 }
 
 .line-1 {
-  position: absolute;
-  top: 0%;
-  right: 20%;
-  width: 24vw;
-  height: auto;
+    position: absolute;
+    top: 0%;
+    right: 20%;
+    width: 24vw;
+    height: auto;
 }
 
 .line-2 {
-  position: absolute;
-  top: 32%;
-  right: 18%;
-  width: 8vw;
-  height: auto;  
+    position: absolute;
+    top: 32%;
+    right: 18%;
+    width: 8vw;
+    height: auto;
 }
 
 .line-3 {
-  position: absolute;
-  top: 47%;
-  right: 4%;
-  width: 14vw;
-  height: auto;  
+    position: absolute;
+    top: 47%;
+    right: 4%;
+    width: 14vw;
+    height: auto;
 }
 
 .line-4 {
-  position: absolute;
-  bottom: 7%;
-  right: 9%;
-  width: 2vw;
-  height: auto;  
+    position: absolute;
+    bottom: 7%;
+    right: 9%;
+    width: 2vw;
+    height: auto;
 }
 
 .triangle {
-  position: absolute;
-  bottom: 28%;
-  right: 12%;
-  width: 5vw;
-  height: auto;
+    position: absolute;
+    bottom: 28%;
+    right: 12%;
+    width: 5vw;
+    height: auto;
 }
 
 
 .top__title {
     font-family: Montserrat;
-    font-weight: 700;    
-    font-size: 64px;    
+    font-weight: 700;
+    font-size: 64px;
     line-height: 100%;
     letter-spacing: 0px;
     vertical-align: middle;
-    
+
 
 }
+
 .top__subtitle {
     font-family: Montserrat;
     font-weight: 400;
     font-style: Regular;
-    font-size: 24px;    
+    font-size: 24px;
     line-height: 32px;
     letter-spacing: 0px;
     vertical-align: middle;
 }
+
 .bold-phrase {
-  font-weight: 600;
+    font-weight: 600;
 }
 
-.btn {  
+.btn {
     width: 247px;
-    
-    background-color:  #202027;    
+
+    background-color: #202027;
     color: #FFFFFF;
     gap: 10px;
     border-width: 1px;
@@ -206,55 +211,64 @@ padding: 0;
     border: 1px solid #202027;
 
     font-family: Montserrat;
-    font-weight: 600;    
-    font-size: 24px;    
+    font-weight: 600;
+    font-size: 24px;
     line-height: 142%;
     letter-spacing: 0%;
     text-align: center;
     text-decoration: none;
 }
+
 .btn:hover {
-    background-color:  #FFFFFF;    
+    background-color: #FFFFFF;
     color: #000;
 }
 
 .ticker {
     position: relative;
-    width: 100%;
+    width: 118%;
     height: 90px;
     background-color: #BCEC30;
-    overflow: hidden;                /* скрывает всё, что выходит за границы */
-    white-space: nowrap;             /* текст не переносится на новую строку */
+    overflow: hidden;
+    /* скрывает всё, что выходит за границы */
+    white-space: nowrap;
+    /* текст не переносится на новую строку */
     display: flex;
     align-items: center;
     z-index: 2;
+    margin-left: -120px;
 }
 
 .ticker__inner {
     display: inline-block;
-    animation: ticker-loop 20s linear infinite;  /* 20с — скорость прокрутки */
+    animation: ticker-loop 20s linear infinite;
+    /* 20с — скорость прокрутки */
 }
 
 @keyframes ticker-loop {
-  0% {
-    transform: translateX(100%);      /* старт справа за границей */
-  }
-  100% {
-    transform: translateX(-100%);    /* уходит влево за границу */
-  }
+    0% {
+        transform: translateX(100%);
+        /* старт справа за границей */
+    }
+
+    100% {
+        transform: translateX(-100%);
+        /* уходит влево за границу */
+    }
 }
 
 .ticker-content {
     font-family: Montserrat;
     font-weight: 700;
     font-style: Bold;
-    font-size: 30px;    
+    font-size: 30px;
     line-height: 110.00000000000001%;
     letter-spacing: 4%;
     vertical-align: middle;
     text-transform: uppercase;
 
 }
+
 .contur-star {
     position: absolute;
     top: 100%;
@@ -266,75 +280,79 @@ padding: 0;
 
 .contur-smallstar-1 {
     position: absolute;
-    top: 190%;
-    left: 2%;
+    top: 172%;
+    left: 3%;
     width: 2.2vw;
     height: auto;
     z-index: 1;
 }
+
 .contur-bigstar-1 {
     position: absolute;
-    top: 196%;
-    left: 4%;
+    top: 177%;
+    left: 5%;
     width: 3vw;
     height: auto;
     z-index: 1
 }
+
 .box-game {
     width: 100%;
-    height: 1470px;
-    top: 800px;
-    background-image: url(./img/фон\ об\ играх.png);    
-    padding-top: 94px;  
+    height: auto;
+    background-image: url(./img/фон\ об\ играх.png);
+    padding-top: 94px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
 }
 
 .box-game__wrapper {
     width: 100%;
-    height: 1326px; 
+    height: auto;
 
 }
 
 .box-game__title {
     width: 314px;
-    height: 78px;    
+    height: 78px;
     font-family: Montserrat;
-    font-weight: 700;    
-    font-size: 64px;    
+    font-weight: 700;
+    font-size: 64px;
     line-height: 100%;
     letter-spacing: 0px;
     vertical-align: middle;
-    color: #FFFFFF;    
+    color: #FFFFFF;
 }
 
 .box-game__subtitle {
     width: 788px;
     height: 96px;
     font-family: Montserrat;
-    font-weight: 400;    
-    font-size: 24px;    
+    font-weight: 400;
+    font-size: 24px;
     line-height: 32px;
     letter-spacing: 0px;
     vertical-align: middle;
-    color: #FFFFFF;    
+    color: #FFFFFF;
     padding-top: 24px;
     padding-bottom: 72px;
 
 }
 
 .box-game__card {
-    width: 1201px;
-    height: 1056px; 
-    display: flex;
-    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
-
+    box-sizing: border-box;
 }
-.game__card {    
-    width: 378px;
-    height: 473px;    
+
+.game__card {
+    width: 100%;
+    height: auto;
     opacity: 1;
-    gap: 10px;    
-    padding-bottom: 36px;    
+    gap: 10px;
+    padding-bottom: 36px;
     border-radius: 30px;
     background-color: #FFFFFF;
     text-decoration: none;
@@ -342,14 +360,16 @@ padding: 0;
 }
 
 .game__card:hover {
-  transform: scale(1.05);       /* увеличение на 5% */
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);  /* тень чуть больше */
+    transform: scale(1.05);
+    /* увеличение на 5% */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    /* тень чуть больше */
 }
 
-  .card__img {
-    width: 378px;
-    height: 314px;
-    border-radius: 30px;    
+.card__img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
 }
 
 .card__part2 {
@@ -358,15 +378,24 @@ padding: 0;
     margin-top: 32px;
     margin-bottom: 36px;
 }
+
 .card__nomber {
     width: 108px;
-    height: 36px;     
+    height: 36px;
     background-color: #F7F7F7;
     border-radius: 52.58px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 16px;
+
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0px;
+    vertical-align: bottom;
+
 }
 
 .game-name {
@@ -384,7 +413,7 @@ padding: 0;
     font-family: Montserrat;
     font-weight: 700;
     font-style: Bold;
-    font-size: 48px;    
+    font-size: 48px;
     line-height: 100%;
     letter-spacing: 0px;
     vertical-align: middle;
@@ -393,16 +422,17 @@ padding: 0;
 
 .contur-smallstar-2 {
     position: absolute;
-    top: 284%;
-    right: 12%;
+    top: 256%;
+    right: 9%;
     width: 2.33vw;
     height: auto;
     z-index: 1;
 }
+
 .contur-bigstar-2 {
     position: absolute;
-    top: 289%;
-    right: 7%;
+    top: 258%;
+    right: 3%;
     width: 4.57vw;
     height: auto;
     z-index: 1;
@@ -412,44 +442,48 @@ padding: 0;
 .box-minigames {
     width: 100%;
     height: auto;
-    top: 800px;
-    background-image: url(./img/фон\ об\ играх.png);    
-    padding-top: 94px;     
+    background-image: url(./img/фон\ об\ играх.png);
+    padding-top: 46px;
+    box-sizing: border-box;
 }
 
 .minigames {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 32px;
     padding-bottom: 144px;
 }
+
 .minigames__title {
     font-family: Montserrat;
     font-weight: 700;
     font-style: Bold;
-    font-size: 64px;    
+    font-size: 64px;
     line-height: 100%;
     letter-spacing: 0px;
     vertical-align: middle;
-    color: #FFFFFF; 
+    color: #FFFFFF;
     padding-bottom: 40px;
 }
 
 .gorizontal__card_right {
-    width: 1200px;
+    width: 100%;
     height: 500px;
-    gap: 32px;    
-    border-radius: 30px;    
+    gap: 32px;
+    border-radius: 30px;
     opacity: 1;
     background-color: #FFFFFF;
     box-shadow: 0px 20px 67px -12px #00000021;
     display: flex;
+    justify-content: space-between;
 }
+
 .gorizontal__card_left {
-    width: 1200px;
+    width: 100%;
     height: 500px;
-    gap: 32px;    
-    border-radius: 30px;    
+    gap: 32px;
+    border-radius: 30px;
     opacity: 1;
     background-color: #FFFFFF;
     box-shadow: 0px 20px 67px -12px #00000021;
@@ -460,18 +494,18 @@ padding: 0;
     width: 600px;
     height: 500px;
     padding: 48px;
-    gap: 10px;    
-    opacity: 1;    
+    gap: 10px;
+    opacity: 1;
     display: flex;
     flex-direction: column;
     gap: 24px;
 
 }
 
-.game__btn {      
-    width: 247px;    
-    background-color:  #202027;    
-    color: #FFFFFF;    
+.game__btn {
+    width: 247px;
+    background-color: #202027;
+    color: #FFFFFF;
     gap: 10px;
     border-radius: 60px;
     padding-top: 16px;
@@ -481,15 +515,16 @@ padding: 0;
     border: 1px solid #202027;
 
     font-family: Montserrat;
-    font-weight: 600;    
-    font-size: 24px;    
+    font-weight: 600;
+    font-size: 24px;
     line-height: 142%;
     letter-spacing: 0%;
     text-align: center;
     text-decoration: none;
 }
+
 .game__btn:hover {
-    background-color:  #FFFFFF;    
+    background-color: #FFFFFF;
     color: #000;
 }
 
@@ -497,23 +532,24 @@ padding: 0;
     font-family: Montserrat;
     font-weight: 400;
     font-style: Regular;
-    font-size: 24px;      
+    font-size: 24px;
     line-height: 32px;
     letter-spacing: 0px;
-    vertical-align: middle; 
-    margin-bottom: 12px;   
+    vertical-align: middle;
+    margin-bottom: 12px;
 }
+
 .card__img_big {
     width: 600px;
-    height: 500px;       
+    height: 500px;
     border-radius: 30px;
 
 }
 
 .contur-smallstar-3 {
     position: absolute;
-    top: 665%;
-    right: 14%;
+    top: 613%;
+    right: 10%;
     width: 2.2vw;
     height: auto;
     z-index: 1;
@@ -522,8 +558,8 @@ padding: 0;
 
 .contur-bigstar-3 {
     position: absolute;
-    top: 657%;
-    right: 8%;
+    top: 607%;
+    right: 3%;
     width: 4.45vw;
     height: auto;
     z-index: 1;
@@ -538,16 +574,17 @@ padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 
 }
 
-.footer__content {    
+.footer__content {
     width: 285px;
     height: 29px;
     font-family: Montserrat;
     font-weight: 600;
     font-style: SemiBold;
-    font-size: 24px;  
+    font-size: 24px;
     line-height: 100%;
     letter-spacing: 0px;
     text-align: center;
