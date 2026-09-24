@@ -55,4 +55,4 @@ const user = {
 /*Задание 10*/
 let userName = prompt ("Как твое имя");
 alert (`Привет, ${userName}!`);
-
+/
