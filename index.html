@@ -27,13 +27,21 @@
 
         <div class="top-content">
             <div class="top__wrapper">
-                <h1 class="top__title">Добро пожаловать на&nbsp;мой сайт мини-игр</h1>
-                <p class="top__subtitle">Тебе предстоит пройти несколько увлекательных игр. Если&nbsp;готов, нажимай
-                    <span class="bold-phrase">«Поехали!»</span> и
-                    <span class="bold-phrase">приступай.</span>
-                </p>
+                <div class="top__description">
+                    <h1 class="top__title">Добро пожаловать на&nbsp;мой сайт мини-игр</h1>
+                    <p class="top__subtitle">Тебе предстоит пройти несколько увлекательных игр. Если&nbsp;готов, нажимай
+                        <span class="bold-phrase">«Поехали!»</span> и
+                        <span class="bold-phrase">приступай.</span>
+                    </p>
+            
+                        <div class="btn-desktop">
+                            <a href="#about-games" class="btn">Поехали!</a>
+                        </div>
+                        <div class="btn-mobile">
+                            <a href="#mini-games" class="btn">Поехали!</a>
+                        </div>
+                </div>
             </div>
-            <a href="#about-games" class="btn">Поехали!</a>
         </div>
         <div class="ticker">
             <div class="ticker__inner">
@@ -65,7 +73,7 @@
 
                 </a>
 
-                <a href="#game-2" class="game__card">
+                <a href="#game-2" class="game__card game__card_big">
                     <img class="card__img" src="./img/простая арифметика.png" alt="Простая арифметика">
                     <div class="card__part2">
                         <div class="card__wrapper">
@@ -98,7 +106,7 @@
 
                 </a>
 
-                <a href="#game-5" class="game__card">
+                <a href="#game-5" class="game__card game__card_big">
                     <img class="card__img" src="./img/простая викторина.png" alt="Простая викторина">
                     <div class="card__part2">
                         <div class="card__wrapper">
@@ -174,13 +182,79 @@
                     <p class="game__desc">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
                     <a href="#" class="game__btn">Играть!</a>
                 </div>
-            </div>
+            </div>            
         </div>
         <img class="contur-smallstar-3" src="./img/контур маленькой звезды.png" alt="контур маленькой звезды">
         <img class="contur-bigstar-3" src="./img/контур большой звезды.png" alt="контур большой звезды">
 
     </section>
-
+    <section class="mobile center">
+        <h1 class="minigames__title" id="mini-games">Мини-игры</h1>
+        <div class="minigames-mobile">
+            <div class="box-game__card">
+            <div class="game__card">
+                <img class="card__img" src="./img/угадай число.png" alt="Угадай чисо">
+                <div class="card__part2">
+                    <div class="card__wrapper">                        
+                        <h3 class="game-name">Угадай число</h3>
+                        <p class="game__desc">Попробуй угадать случайное число от 1 до 100.</p>
+                        <a href="#" class="game__btn">Играть!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="game__card">
+                <img class="card__img" src="./img/простая арифметика.png" alt="Простая арифметика">
+                <div class="card__part2">
+                    <div class="card__wrapper">                        
+                        <h3 class="game-name">Простая арифметика</h3>
+                        <p class="game__desc">Попробуй решить простые арифметические задачи.</p>
+                        <a href="#" class="game__btn">Играть!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="game__card">
+                <img class="card__img" src="./img/переверни текст.png" alt="Переверни текст">                
+                <div class="card__part2">
+                    <div class="card__wrapper">                        
+                        <h3 class="game-name">Переверни текст</h3>
+                        <p class="game__desc">Попробуй ввести текст, который будет перевернут.</p>
+                        <a href="#" class="game__btn">Играть!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="game__card">
+                <img class="card__img" src="./img/Камень, ножницы, бумага.png" alt="Камень, ножницы, бумага">
+                <div class="card__part2">
+                    <div class="card__wrapper">                        
+                        <h3 class="game-name">Камень, ножницы, <br>бумага</h3>
+                        <p class="game__desc">Сыграй в популярную игру против компьютера.</p>
+                        <a href="#" class="game__btn">Играть!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="game__card">
+                <img class="card__img" src="./img/простая викторина.png" alt="Простая викторина">
+                <div class="card__part2">
+                    <div class="card__wrapper">                        
+                        <h3 class="game-name">Простая викторина</h3>                        
+                        <p class="game__desc">Отвечай на вопросы викторины с вариантами ответов.</p>
+                        <a href="#" class="game__btn">Играть!</a>
+                    </div>                    
+                </div>
+            </div>
+            <div class="game__card">
+                <img class="card__img" src="./img/генератор случайных цветов.png" alt="Генератор случайных цветов">
+                <div class="card__part2">
+                    <div class="card__wrapper">                                                
+                        <h3 class="game-name">Генератор случайных цветов</h3>
+                        <p class="game__desc">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
+                        <a href="#" class="game__btn">Играть!</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
     <footer class="footer center">
         <div class="footer__content">
             <p>Все права защищены.</p>
@@ -188,7 +262,9 @@
 
     </footer>
 
-
+    <script>
+        
+    </script>
 </body>
 
 </html>
