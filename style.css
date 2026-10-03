@@ -20,7 +20,7 @@
 
 }
 
-.top-content {
+.top__content {
     width: 769px;
     height: auto;
     padding-top: 196px;
@@ -43,59 +43,8 @@
     flex-direction: column;       
     box-sizing: border-box;    
 }       
-/* Позиционирование по px
-.angle-star {
-    position: absolute;
-    padding-left: 990px;
-}
 
-.star-1 {
-    position: absolute;
-    padding-top: 94px;
-    padding-left: 63px;
-}
-.star-2 {
-    position: absolute;
-    padding-top: 69px;
-    padding-left: 156px;
-}
-.star-3 {
-    position: absolute;
-    padding-top: 568px;
-    padding-left: 1013px;
-}
-.star-4 {
-    position: absolute;
-    padding-top: 538px;
-    padding-left: 948px;
-}
-.line-1 {
-    position: absolute;
-    padding-left: 854px;
-}
-.line-2 {
-    position: absolute;
-    padding-top: 254px;
-    padding-left: 1067px;
-}
-.line-3 {
-    position: absolute;
-    padding-top: 379px;
-    padding-left: 1225px;
-}
-.line-4 {
-    position: absolute;
-    padding-top: 663px;
-    padding-left: 1345px;
-}
-.triangle {
-    position: absolute;
-    padding-top: 468px;
-    padding-left: 1247px;
-}
-
-*/
-.angle-star {
+.top__star {
     position: absolute;
     top: 0%;
     right: 0%;
@@ -103,7 +52,7 @@
     height: auto;
 }
 
-.star-1 {
+.top__star--large-left {
     position: absolute;
     top: 12%;
     left: 4%;
@@ -111,7 +60,7 @@
     height: auto;
 }
 
-.star-2 {
+.top__star--small-left {
     position: absolute;
     top: 8.5%;
     left: 11%;
@@ -119,7 +68,7 @@
     height: auto;
 }
 
-.star-3 {
+.top__star--large-right {
     position: absolute;
     bottom: 23%;
     right: 28%;
@@ -127,7 +76,7 @@
     height: auto;
 }
 
-.star-4 {
+.top__star--small-right {
     position: absolute;
     bottom: 31%;
     right: 34%;
@@ -135,7 +84,7 @@
     height: auto;
 }
 
-.line-1 {
+.top__line--above {
     position: absolute;
     top: 0%;
     right: 20%;
@@ -143,7 +92,7 @@
     height: auto;
 }
 
-.line-2 {
+.top__line--side {
     position: absolute;
     top: 32%;
     right: 18%;
@@ -151,7 +100,7 @@
     height: auto;
 }
 
-.line-3 {
+.top__line--below {
     position: absolute;
     top: 47%;
     right: 4%;
@@ -159,7 +108,7 @@
     height: auto;
 }
 
-.line-4 {
+.top__line--under-triangle {
     position: absolute;
     bottom: 7%;
     right: 9%;
@@ -167,7 +116,7 @@
     height: auto;
 }
 
-.triangle {
+.top__triangle {
     position: absolute;
     bottom: 28%;
     right: 12%;
@@ -198,8 +147,12 @@
     padding-bottom: 48px;
 }
 
-.bold-phrase {
+.top__phrase--bold {
     font-weight: 600;
+}
+
+.top__btn {
+    display: inline-block;
 }
 
 .btn {
@@ -229,7 +182,7 @@
     background-color: #FFFFFF;
     color: #000;
 }
-.btn-mobile {
+.top__btn--mobile {
     display: none;
 }
 
@@ -266,7 +219,7 @@
     }
 }
 
-.ticker-content {
+.ticker__content {
     font-family: Montserrat;
     font-weight: 700;
     font-style: Bold;
@@ -278,7 +231,7 @@
 
 }
 
-.contur-star {
+.box-game__star--outline {
     position: absolute;
     top: 100%;
     right: 0%;
@@ -287,7 +240,7 @@
     z-index: 1;
 }
 
-.contur-smallstar-1 {
+.box-game__star--outline-small {
     position: absolute;
     top: 172%;
     left: 3%;
@@ -296,7 +249,7 @@
     z-index: 1;
 }
 
-.contur-bigstar-1 {
+.box-game__star--outline-large {
     position: absolute;
     top: 177%;
     left: 5%;
@@ -347,7 +300,7 @@
 
 }
 
-.box-game__card {
+.box-game__grid {
     width: 100%;
     height: auto;
     display: grid;
@@ -356,41 +309,47 @@
     box-sizing: border-box;
 }
 
-.game__card {
+.box-game__card {
     width: 100%;
-    height: auto;
+    height: 512px;
     opacity: 1;
     gap: 10px;
-    padding-bottom: 36px;
+    padding-bottom: 0px;
     border-radius: 30px;
     background-color: #FFFFFF;
     text-decoration: none;
     z-index: 2;
 }
 
-.game__card:hover {
+.box-game__card:hover {
     transform: scale(1.05);
     /* увеличение на 5% */
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
     /* тень чуть больше */
 }
-.game__card_big {
-    margin-top: 20px;
+.box-game__card_small {
+    height: 473px;
+    padding-bottom: 0px;
 }
-.card__img {
+
+.box-game__card_big {
+    height: 551px;
+    margin-top: -36px;
+}
+.box-game__img {
     width: 100%;
     height: auto;
     border-radius: 30px;
 }
 
-.card__part2 {
+.box-game__bottom {
     margin-right: 32px;
     margin-left: 32px;
     margin-top: 32px;
     margin-bottom: 36px;
 }
 
-.card__nomber {
+.box-game__number {
     width: 108px;
     height: 36px;
     background-color: #F7F7F7;
@@ -399,7 +358,8 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 16px;
-
+    color: #202027;
+;
     font-family: Montserrat;
     font-weight: 500;
     font-size: 16px;
@@ -409,7 +369,7 @@
 
 }
 
-.game-name {
+.box-game__name {
     font-family: Montserrat;
     font-weight: 700;
     font-style: Bold;
@@ -420,18 +380,7 @@
     color: #202027;
 }
 
-.game-name_big {
-    font-family: Montserrat;
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 48px;
-    line-height: 100%;
-    letter-spacing: 0px;
-    vertical-align: middle;
-
-}
-
-.contur-smallstar-2 {
+.minigames__star--outline-small {
     position: absolute;
     top: 256%;
     right: 9%;
@@ -440,7 +389,7 @@
     z-index: 1;
 }
 
-.contur-bigstar-2 {
+.minigames__star--outline-large {
     position: absolute;
     top: 258%;
     right: 3%;
@@ -450,7 +399,7 @@
     transform: rotate(-5.45deg)
 }
 
-.box-minigames {
+.minigames {
     width: 100%;
     height: auto;
     background-image: url(./img/фон\ об\ играх.png);
@@ -458,7 +407,7 @@
     box-sizing: border-box;
 }
 
-.minigames {
+.minigames__list {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -478,19 +427,14 @@
     padding-bottom: 40px;
 }
 
-.gorizontal__card_right {
+.minigames__wrapper {
     width: 100%;
-    height: 500px;
-    gap: 32px;
-    border-radius: 30px;
-    opacity: 1;
-    background-color: #FFFFFF;
-    box-shadow: 0px 20px 67px -12px #00000021;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 32px;
+    box-sizing: border-box;
 }
-
-.gorizontal__card_left {
+.minigames__card {
     width: 100%;
     height: 500px;
     gap: 32px;
@@ -501,8 +445,8 @@
     display: flex;
 }
 
-.card__part1 {
-    width: 600px;
+.minigames__info {
+    width: 100%;
     height: 500px;
     padding: 48px;
     gap: 10px;
@@ -510,19 +454,37 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-
 }
 
-.game__btn {
-    width: 247px;
+.minigames__name {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    vertical-align: middle;
+}
+
+.minigames__desc {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    margin-bottom: 12px; 
+}
+
+.minigames__btn {
+    max-width: 245.4px;
     background-color: #202027;
     color: #FFFFFF;
     gap: 10px;
     border-radius: 60px;
-    padding-top: 16px;
-    padding-right: 28px;
-    padding-bottom: 16px;
-    padding-left: 28px;
+    padding-top: 15.5px;
+    padding-bottom: 15.5px;
     border: 1px solid #202027;
 
     font-family: Montserrat;
@@ -534,24 +496,15 @@
     text-decoration: none;
 }
 
-.game__btn:hover {
+.minigames__btn:hover {
     background-color: #FFFFFF;
     color: #000;
 }
 
-.game__desc {
-    font-family: Montserrat;
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 24px;
-    line-height: 32px;
-    letter-spacing: 0px;
-    vertical-align: middle;
-    margin-bottom: 12px; 
-}
 
-.card__img_big {
-    width: 600px;
+
+.minigames__img {
+    max-width: 600px;
     height: 500px;
     border-radius: 30px;
 
@@ -612,32 +565,32 @@
         padding-right: 16px;
     }
     
-    .angle-star {
+    .top__star {
         width: 35vw;
         }
-    .star-1 {
+    .top__star--large-left {
         top: 12%;
         left: 14%;
         width: 9.1vw;
     }
-    .star-2 {
+    .top__star--small-left {
         top: 7%;
         left: 27%;
         width: 5.5vw;
     }
 
-    .star-3 {
+    .top__star--large-right {
         bottom: 12%;
         right: 11%;
         width: 10.2vw;
     }
-    .star-4 {
+    .top__star--small-right {
         bottom: 19%;
         right: 23%;
         width: 4.68vw
     }
     
-    .top-content{
+    .top__content{
         width: 100%;
         height: auto;
         padding-top: 147px; 
@@ -652,27 +605,27 @@
         height: 51px;
         margin-left: -15px;        
     }
-    .ticker-content {
+    .ticker__content {
         font-size: 16px;
     }
     
-    .line-1 {
+    .top__line--above {
         display: none;    
     }
 
-    .line-2 {
+    .top__line--side {
         display: none;    
     }
 
-    .line-3 {
+    .top__line--below {
         display: none;
     }
 
-    .line-4 {
+    .top__line--under-triangle {
         display: none;    
     }
 
-    .triangle {
+    .top__triangle {
         display: none;    
     }
 
@@ -701,13 +654,14 @@
         line-height: 100%;
         padding-bottom: 36px;        
     }
-    .btn-desktop {
+
+    .top__btn--desktop {
         display: none;
     }
 
-    .btn-mobile {
+    .top__btn--mobile {
         display: flex;
-        justify-content: center;               
+        justify-content: center;         
     }
 
     .box-game {
@@ -717,13 +671,18 @@
         width: 75px;
         height: 23px;
         font-size: 16px;
+        padding-left: 102px;
+        padding-right: 105px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-left: 25px;
     }
     .game__btn {
         width: 75%;
         font-size: 16px
     }
 
-    .box-minigames {
+    .minigames {
         display: none;
     }
 
@@ -738,22 +697,126 @@
         flex-direction: column;       
     }
 
+    .mobile__title {
+        font-family: Montserrat;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 40px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        vertical-align: middle;
+        color: #FFFFFF;
+        padding-bottom: 40px;
+    }
+    .mobile__minigames {
+
+    }
+    .mobile__box {
+        width: 100%;
+        height: auto;
+        border-radius: 30px;
+        display: flex;
+        background-color: rgba(32, 32, 39, 1);
+        flex-direction: column;
+        align-items: center;
+        gap: 24px; 
+    }
+    .mobile__card {
+        width: 100%;
+        height: auto;
+        opacity: 1;
+        gap: 10px;
+        padding-bottom: 36px;
+        border-radius: 30px;
+        background-color: #FFFFFF;
+        text-decoration: none;
+        z-index: 2;
+    }
+    .mobile__img {
+        width: 100%;
+        max-height: 284.93px;
+        height: auto;
+        border-radius: 30px;
+    }
+    .mobile__bottom {
+        max-height: 266.7px;
+        width: 100%;
+        background-color: white;
+        border-radius: 30px;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+    .mobile__wrapper {
+        max-width: 284.93px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+        padding-top: 29px;
+    }
+    .mobile__name {
+        font-family: Montserrat;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        vertical-align: middle;
+        color: #202027;
+    }
+
+    .mobile__desc {
+        font-family: Montserrat;
+        font-weight: 400;
+        letter-spacing: 0px;
+        vertical-align: middle;
+        font-size: 16px;
+        line-height: 100%;
+        padding-bottom: 16px;
+    }
+
+    .mobile__btn {
+        width: 227px;
+        background-color: #202027;
+        color: #FFFFFF;
+        gap: 10px;
+        border-radius: 60px;
+        padding-top: 10px;
+        padding-right: 28px;
+        padding-bottom: 10px;
+        padding-left: 28px;
+        border: 1px solid #202027;
+
+        font-family: Montserrat;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 142%;
+        letter-spacing: 0%;
+        text-align: center;
+        text-decoration: none;
+    }
+    .mobile__btn:hover {
+        background-color: #FFFFFF;
+        color: #000;
+    }
     .minigames__title { 
     font-size: 40px;
     }
 
-    .box-game__card {
+    .box-game__grid {
         display: flex;
         flex-direction: column;
         gap: 24px;
     }
 
-    .game__card:hover {
+    .box-game__card:hover {
         transform: none;
         box-shadow: none;    
     }
 
-    .card__part2 {
+    .box-game__bottom {
         display: flex;
         justify-content: center;
         flex-wrap: nowrap;
@@ -764,14 +827,14 @@
         margin-bottom: 32px;
     }
 
-    .card__wrapper {
+    .box-game__info {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .game-name {
+    .box-game__name {
         font-size: 32px;
         line-height: 100%;
         padding-bottom: 16px;

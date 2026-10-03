@@ -13,31 +13,31 @@
 
 <body>
     <section class="top center">
-        <img class="angle-star" src="./img/звезда в углу.png" alt="звузда в верхнем правом углу">
-        <img class="star-1" src="./img/большая звезда слева.png" alt="большая звезда слева">
-        <img class="star-2" src="./img/маленькая звезда слева.png" alt="маленькая звезда слева">
-        <img class="star-3" src="./img/большая звезда справа.png" alt="большая звезда справа">
-        <img class="star-4" src="./img/маленькая звезда справа.png" alt="маленькая звезда справа">
-        <img class="line-1" src="./img/линия над звездой.png" alt="линия над угловой звездой">
-        <img class="line-2" src="./img/линия сбоку звезды.png" alt="линия сбоку угловой звезды">
-        <img class="line-3" src="./img/линия под звездой.png" alt="линия под угловой звездой">
-        <img class="line-4" src="./img/линия под треугольником.png" alt="линия под треугольником">
-        <img class="triangle" src="./img/треугольник.png" alt="треугольник">
+        <img class="top__star" src="./img/звезда в углу.png" alt="звузда в верхнем правом углу">
+        <img class="top__star--large-left" src="./img/большая звезда слева.png" alt="большая звезда слева">
+        <img class="top__star--small-left" src="./img/маленькая звезда слева.png" alt="маленькая звезда слева">
+        <img class="top__star--large-right" src="./img/большая звезда справа.png" alt="большая звезда справа">
+        <img class="top__star--small-right" src="./img/маленькая звезда справа.png" alt="маленькая звезда справа">
+        <img class="top__line--above" src="./img/линия над звездой.png" alt="линия над угловой звездой">
+        <img class="top__line--side" src="./img/линия сбоку звезды.png" alt="линия сбоку угловой звезды">
+        <img class="top__line--below" src="./img/линия под звездой.png" alt="линия под угловой звездой">
+        <img class="top__line--under-triangle" src="./img/линия под треугольником.png" alt="линия под треугольником">
+        <img class="top__triangle" src="./img/треугольник.png" alt="треугольник">
 
 
-        <div class="top-content">
+        <div class="top__content">
             <div class="top__wrapper">
                 <div class="top__description">
                     <h1 class="top__title">Добро пожаловать на&nbsp;мой сайт мини-игр</h1>
                     <p class="top__subtitle">Тебе предстоит пройти несколько увлекательных игр. Если&nbsp;готов, нажимай
-                        <span class="bold-phrase">«Поехали!»</span> и
-                        <span class="bold-phrase">приступай.</span>
+                        <span class="top__phrase--bold">«Поехали!»</span> и
+                        <span class="top__phrase--bold">приступай.</span>
                     </p>
             
-                        <div class="btn-desktop">
+                        <div class="top__btn top__btn--desktop">
                             <a href="#about-games" class="btn">Поехали!</a>
                         </div>
-                        <div class="btn-mobile">
+                        <div class="top__btn top__btn--mobile">
                             <a href="#mini-games" class="btn">Поехали!</a>
                         </div>
                 </div>
@@ -45,15 +45,15 @@
         </div>
         <div class="ticker">
             <div class="ticker__inner">
-                <p class="ticker-content">Викторина Угадай число Переверни текст Простая арифметика Камень, ножницы,
+                <p class="ticker__content">Викторина Угадай число Переверни текст Простая арифметика Камень, ножницы,
                     бумага Генератор случайных цветов</p>
             </div>
         </div>
     </section>
     <section class="box-game center">
-        <img class="contur-star" src="./img/контур звезды.png" alt="контур звезды">
-        <img class="contur-smallstar-1" src="./img/контур маленькой звезды.png" alt="контур маленькой звезды">
-        <img class="contur-bigstar-1" src="./img/контур большой звезды.png" alt="контур большой звезды">
+        <img class="box-game__star--outline" src="./img/контур звезды.png" alt="контур звезды">
+        <img class="box-game__star--outline-small" src="./img/контур маленькой звезды.png" alt="контур маленькой звезды">
+        <img class="box-game__star--outline-large" src="./img/контур большой звезды.png" alt="контур большой звезды">
         <div class="box-game__wrapper">
             <h1 class="box-game__title" id="about-games">Об играх</h1>
             <p class="box-game__subtitle">В моей коллекции представлено 6 игр на разные темы. Игры&nbsp;несложные — в
@@ -61,68 +61,68 @@
                 Все&nbsp;игры&nbsp;доступны для пользования.
             </p>
 
-            <div class="box-game__card">
-                <a href="#game-1" class="game__card">
-                    <img class="card__img" src="./img/угадай число.png" alt="Угадай чисо">
-                    <div class="card__part2">
-                        <div class="card__wrapper">
-                            <p class="card__nomber">Игра № 1</p>
-                            <h3 class="game-name">Угадай число</h3>
+            <div class="box-game__grid">
+                <a href="#game-1" class="box-game__card box-game__card_small">
+                    <img class="box-game__img" src="./img/угадай число.png" alt="Угадай чисо">
+                    <div class="box-game__bottom">
+                        <div class="box-game__info">
+                            <p class="box-game__number">Игра № 1</p>
+                            <h3 class="box-game__name">Угадай число</h3>
                         </div>
                     </div>
 
                 </a>
 
-                <a href="#game-2" class="game__card game__card_big">
-                    <img class="card__img" src="./img/простая арифметика.png" alt="Простая арифметика">
-                    <div class="card__part2">
-                        <div class="card__wrapper">
-                            <p class="card__nomber">Игра № 2</p>
-                            <h3 class="game-name">Простая арифметика</h3>
+                <a href="#game-2" class="box-game__card">
+                    <img class="box-game__img" src="./img/простая арифметика.png" alt="Простая арифметика">
+                    <div class="box-game__bottom">
+                        <div class="box-game__info">
+                            <p class="box-game__number">Игра № 2</p>
+                            <h3 class="box-game__name">Простая арифметика</h3>
                         </div>
                     </div>
 
                 </a>
 
-                <a href="#game-3" class="game__card">
-                    <img class="card__img" src="./img/переверни текст.png" alt="Переверни текст">
-                    <div class="card__part2">
-                        <div class="card__wrapper">
-                            <p class="card__nomber">Игра № 3</p>
-                            <h3 class="game-name">Переверни текст</h3>
+                <a href="#game-3" class="box-game__card box-game__card_small">
+                    <img class="box-game__img" src="./img/переверни текст.png" alt="Переверни текст">
+                    <div class="box-game__bottom">
+                        <div class="box-game__info">
+                            <p class="box-game__number">Игра № 3</p>
+                            <h3 class="box-game__name">Переверни текст</h3>
                         </div>
                     </div>
 
                 </a>
 
-                <a href="#game-4" class="game__card">
-                    <img class="card__img" src="./img/Камень, ножницы, бумага.png" alt="Камень, ножницы, бумага">
-                    <div class="card__part2">
-                        <div class="card__wrapper">
-                            <p class="card__nomber">Игра № 4</p>
-                            <h3 class="game-name">Камень, ножницы, <br>бумага</h3>
+                <a href="#game-4" class="box-game__card box-game__card_big">
+                    <img class="box-game__img" src="./img/Камень, ножницы, бумага.png" alt="Камень, ножницы, бумага">
+                    <div class="box-game__bottom">
+                        <div class="box-game__info">
+                            <p class="box-game__number">Игра № 4</p>
+                            <h3 class="box-game__name">Камень, ножницы, <br>бумага</h3>
                         </div>
                     </div>
 
                 </a>
 
-                <a href="#game-5" class="game__card game__card_big">
-                    <img class="card__img" src="./img/простая викторина.png" alt="Простая викторина">
-                    <div class="card__part2">
-                        <div class="card__wrapper">
-                            <p class="card__nomber">Игра № 5</p>
-                            <h3 class="game-name">Простая викторина</h3>
+                <a href="#game-5" class="box-game__card">
+                    <img class="box-game__img" src="./img/простая викторина.png" alt="Простая викторина">
+                    <div class="box-game__bottom">
+                        <div class="box-game__info">
+                            <p class="box-game__number">Игра № 5</p>
+                            <h3 class="box-game__name">Простая викторина</h3>
                         </div>
                     </div>
 
                 </a>
 
-                <a href="#game-6" class="game__card">
-                    <img class="card__img" src="./img/генератор случайных цветов.png" alt="Генератор случайных цветов">
-                    <div class="card__part2">
-                        <div class="card__wrapper">
-                            <p class="card__nomber">Игра № 6</p>
-                            <h3 class="game-name">Генератор случайных цветов</h3>
+                <a href="#game-6" class="box-game__card box-game__card_big">
+                    <img class="box-game__img" src="./img/генератор случайных цветов.png" alt="Генератор случайных цветов">
+                    <div class="box-game__bottom">
+                        <div class="box-game__info">
+                            <p class="box-game__number">Игра № 6</p>
+                            <h3 class="box-game__name">Генератор случайных цветов</h3>
                         </div>
                     </div>
                 </a>
@@ -130,57 +130,59 @@
         </div>
 
     </section>
-    <section class="box-minigames center">
-        <img class="contur-smallstar-2" src="./img/контур маленькой звезды.png" alt="контур маленькой звезды">
-        <img class="contur-bigstar-2" src="./img/контур большой звезды.png" alt="контур большой звезды">
-        <div class="minigames">
+    <section class="minigames center">
+        <img class="minigames__star--outline-small" src="./img/контур маленькой звезды.png" alt="контур маленькой звезды">
+        <img class="minigames__star--outline-large" src="./img/контур большой звезды.png" alt="контур большой звезды">
+        <div class="minigames__list">
             <h1 class="minigames__title">Мини-игры</h1>
-            <div class="gorizontal__card_right" id="game-1">
-                <div class="card__part1">
-                    <h2 class="game-name_big">Угадай число</h2>
-                    <p class="game__desc">Попробуй угадать случайное число от 1 до 100.</p>
-                    <a href="#" class="game__btn">Играть!</a>
+            <div class="minigames__wrapper">
+                <div class="minigames__card" id="game-1">
+                <div class="minigames__info">
+                    <h2 class="minigames__name">Угадай число</h2>
+                    <p class="minigames__desc">Попробуй угадать случайное число от 1 до 100.</p>
+                    <a href="#" class="minigames__btn">Играть!</a>                    
                 </div>
-                <img class="card__img_big" src="./img/Угадай число большая.png" alt="Угадай число">
-            </div>
-            <div class="gorizontal__card_left" id="game-2">
-                <img class="card__img_big" src="./img/простая арифметика большая.png" alt="Угадай число">
-                <div class="card__part1">
-                    <h2 class="game-name_big">Простая арифметика</h2>
-                    <p class="game__desc">Попробуй решить простые арифметические задачи.</p>
-                    <a href="#" class="game__btn">Играть!</a>
+                <img class="minigames__img" src="./img/Угадай число большая.png" alt="Угадай число">
                 </div>
-            </div>
-            <div class="gorizontal__card_right" id="game-3">
-                <div class="card__part1">
-                    <h2 class="game-name_big">Переверни текст</h2>
-                    <p class="game__desc">Попробуй ввести текст, который будет перевернут.</p>
-                    <a href="#" class="game__btn">Играть!</a>
+                <div class="minigames__card" id="game-2">
+                <img class="minigames__img" src="./img/простая арифметика большая.png" alt="Угадай число">
+                <div class="minigames__info">
+                    <h2 class="minigames__name">Простая арифметика</h2>
+                    <p class="minigames__desc">Попробуй решить простые арифметические задачи.</p>
+                    <a href="#" class="minigames__btn">Играть!</a>
                 </div>
-                <img class="card__img_big" src="./img/переверни текст большая.png" alt="Угадай число">
-            </div>
-            <div class="gorizontal__card_left" id="game-4">
-                <img class="card__img_big" src="./img/камень ножницы большая.png" alt="Угадай число">
-                <div class="card__part1">
-                    <h2 class="game-name_big">Камень, ножницы, бумага</h2>
-                    <p class="game__desc">Сыграй в популярную игру против компьютера.</p>
-                    <a href="#" class="game__btn">Играть!</a>
                 </div>
-            </div>
-            <div class="gorizontal__card_right" id="game-5">
-                <div class="card__part1">
-                    <h2 class="game-name_big">Простая викторина</h2>
-                    <p class="game__desc">Отвечай на вопросы викторины с вариантами ответов.</p>
-                    <a href="#" class="game__btn">Играть!</a>
+                <div class="minigames__card" id="game-3">
+                    <div class="minigames__info">
+                        <h2 class="minigames__name">Переверни текст</h2>
+                        <p class="minigames__desc">Попробуй ввести текст, который будет перевернут.</p>
+                        <a href="#" class="minigames__btn">Играть!</a>
+                    </div>
+                    <img class="minigames__img" src="./img/переверни текст большая.png" alt="Угадай число">
                 </div>
-                <img class="card__img_big" src="./img/простая викторина большая.png" alt="Угадай число">
-            </div>
-            <div class="gorizontal__card_left" id="game-6">
-                <img class="card__img_big" src="./img/генератор большая.png" alt="Угадай число">
-                <div class="card__part1">
-                    <h2 class="game-name_big">Генератор случайных цветов</h2>
-                    <p class="game__desc">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
-                    <a href="#" class="game__btn">Играть!</a>
+                <div class="minigames__card" id="game-4">
+                    <img class="minigames__img" src="./img/камень ножницы большая.png" alt="Угадай число">
+                    <div class="minigames__info">
+                        <h2 class="minigames__name">Камень, ножницы, бумага</h2>
+                        <p class="minigames__desc">Сыграй в популярную игру против компьютера.</p>
+                        <a href="#" class="minigames__btn">Играть!</a>
+                    </div>
+                </div>
+                <div class="minigames__card" id="game-5">
+                    <div class="minigames__info">
+                        <h2 class="minigames__name">Простая викторина</h2>
+                        <p class="minigames__desc">Отвечай на вопросы викторины с вариантами ответов.</p>
+                        <a href="#" class="minigames__btn">Играть!</a>
+                    </div>
+                    <img class="minigames__img" src="./img/простая викторина большая.png" alt="Угадай число">
+                </div>
+                <div class="minigames__card" id="game-6">
+                    <img class="minigames__img" src="./img/генератор большая.png" alt="Угадай число">
+                    <div class="minigames__info">
+                        <h2 class="minigames__name">Генератор случайных цветов</h2>
+                        <p class="minigames__desc">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
+                        <a href="#" class="minigames__btn">Играть!</a>
+                    </div>
                 </div>
             </div>            
         </div>
@@ -189,66 +191,66 @@
 
     </section>
     <section class="mobile center">
-        <h1 class="minigames__title" id="mini-games">Мини-игры</h1>
-        <div class="minigames-mobile">
-            <div class="box-game__card">
-            <div class="game__card">
-                <img class="card__img" src="./img/угадай число.png" alt="Угадай чисо">
-                <div class="card__part2">
-                    <div class="card__wrapper">                        
-                        <h3 class="game-name">Угадай число</h3>
-                        <p class="game__desc">Попробуй угадать случайное число от 1 до 100.</p>
-                        <a href="#" class="game__btn">Играть!</a>
+        <h1 class="mobile__title" id="mini-games">Мини-игры</h1>
+        <div class="mobile__minigames">
+            <div class="mobile__box">
+            <div class="mobile__card">
+                <img class="mobile__img" src="./img/угадай число.png" alt="Угадай чисо">
+                <div class="mobile__bottom">
+                    <div class="mobile__wrapper">                        
+                        <h3 class="mobile__name">Угадай число</h3>
+                        <p class="mobile__desc">Попробуй угадать случайное число от 1 до 100.</p>
+                        <a href="#" class="mobile__btn">Играть!</a>
                     </div>
                 </div>
             </div>
-            <div class="game__card">
-                <img class="card__img" src="./img/простая арифметика.png" alt="Простая арифметика">
-                <div class="card__part2">
-                    <div class="card__wrapper">                        
-                        <h3 class="game-name">Простая арифметика</h3>
-                        <p class="game__desc">Попробуй решить простые арифметические задачи.</p>
-                        <a href="#" class="game__btn">Играть!</a>
+            <div class="mobile__card">
+                <img class="mobile__img" src="./img/простая арифметика.png" alt="Простая арифметика">
+                <div class="mobile__bottom">
+                    <div class="mobile__wrapper">                        
+                        <h3 class="mobile__name">Простая арифметика</h3>
+                        <p class="mobile__desc">Попробуй решить простые арифметические задачи.</p>
+                        <a href="#" class="mobile__btn">Играть!</a>
                     </div>
                 </div>
             </div>
-            <div class="game__card">
-                <img class="card__img" src="./img/переверни текст.png" alt="Переверни текст">                
-                <div class="card__part2">
-                    <div class="card__wrapper">                        
-                        <h3 class="game-name">Переверни текст</h3>
-                        <p class="game__desc">Попробуй ввести текст, который будет перевернут.</p>
-                        <a href="#" class="game__btn">Играть!</a>
+            <div class="mobile__card">
+                <img class="mobile__img" src="./img/переверни текст.png" alt="Переверни текст">                
+                <div class="mobile__bottom">
+                    <div class="mobile__wrapper">                        
+                        <h3 class="mobile__name">Переверни текст</h3>
+                        <p class="mobile__desc">Попробуй ввести текст, который будет перевернут.</p>
+                        <a href="#" class="mobile__btn">Играть!</a>
                     </div>
                 </div>
             </div>
-            <div class="game__card">
-                <img class="card__img" src="./img/Камень, ножницы, бумага.png" alt="Камень, ножницы, бумага">
-                <div class="card__part2">
-                    <div class="card__wrapper">                        
-                        <h3 class="game-name">Камень, ножницы, <br>бумага</h3>
-                        <p class="game__desc">Сыграй в популярную игру против компьютера.</p>
-                        <a href="#" class="game__btn">Играть!</a>
+            <div class="mobile__card">
+                <img class="mobile__img" src="./img/Камень, ножницы, бумага.png" alt="Камень, ножницы, бумага">
+                <div class="mobile__bottom">
+                    <div class="mobile__wrapper">                        
+                        <h3 class="mobile__name">Камень, ножницы, <br>бумага</h3>
+                        <p class="mobile__desc">Сыграй в популярную игру против компьютера.</p>
+                        <a href="#" class="mobile__btn">Играть!</a>
                     </div>
                 </div>
             </div>
-            <div class="game__card">
-                <img class="card__img" src="./img/простая викторина.png" alt="Простая викторина">
-                <div class="card__part2">
-                    <div class="card__wrapper">                        
-                        <h3 class="game-name">Простая викторина</h3>                        
-                        <p class="game__desc">Отвечай на вопросы викторины с вариантами ответов.</p>
-                        <a href="#" class="game__btn">Играть!</a>
+            <div class="mobile__card">
+                <img class="mobile__img" src="./img/простая викторина.png" alt="Простая викторина">
+                <div class="mobile__bottom">
+                    <div class="mobile__wrapper">                        
+                        <h3 class="mobile__name">Простая викторина</h3>                        
+                        <p class="mobile__desc">Отвечай на вопросы викторины с вариантами ответов.</p>
+                        <a href="#" class="mobile__btn">Играть!</a>
                     </div>                    
                 </div>
             </div>
-            <div class="game__card">
-                <img class="card__img" src="./img/генератор случайных цветов.png" alt="Генератор случайных цветов">
-                <div class="card__part2">
-                    <div class="card__wrapper">                                                
-                        <h3 class="game-name">Генератор случайных цветов</h3>
-                        <p class="game__desc">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
-                        <a href="#" class="game__btn">Играть!</a>
+            <div class="mobile__card">
+                <img class="mobile__img" src="./img/генератор случайных цветов.png" alt="Генератор случайных цветов">
+                <div class="mobile__bottom">
+                    <div class="mobile__wrapper">                                                
+                        <h3 class="mobile__name">Генератор случайных цветов</h3>
+                        <p class="mobile__desc">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
+                        <a href="#" class="mobile__btn">Играть!</a>
                     </div>
                 </div>
             </div>
