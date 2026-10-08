@@ -23,7 +23,11 @@ console.log(evenOdd(7));
 function exponent(n) {
   return n ** 2;
 }
+function printExponent(n) {
+  console.log(n ** 2);
+}
 console.log(exponent(3));
+printExponent(4);
 
 /* Задание 4 */
 
@@ -47,7 +51,7 @@ function multNumbers(a, b) {
   const numB = Number(b);
 
   if (isNaN(numA) || isNaN(numB)) {
-  console.log('Одно или оба значения не являются числом');
+  return 'Одно или оба значения не являются числом';
   } else
   return numA * numB;
 }
