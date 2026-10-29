@@ -106,7 +106,7 @@
 
                 </a>
 
-                <a href="#game-5" class="box-game__card">
+                <a href="#game-5" class="box-game__card" id="game-5">
                     <img class="box-game__img" src="./img/простая викторина.png" alt="Простая викторина">
                     <div class="box-game__bottom">
                         <div class="box-game__info">
@@ -172,7 +172,7 @@
                     <div class="minigames__info">
                         <h2 class="minigames__name">Простая викторина</h2>
                         <p class="minigames__desc">Отвечай на вопросы викторины с вариантами ответов.</p>
-                        <a href="#" class="minigames__btn">Играть!</a>
+                        <a href="#" class="minigames__btn quiz-start-btn">Играть!</a>
                     </div>
                     <img class="minigames__img" src="./img/простая викторина большая.png" alt="Угадай число">
                 </div>
@@ -240,7 +240,7 @@
                     <div class="mobile__wrapper">                        
                         <h3 class="mobile__name">Простая викторина</h3>                        
                         <p class="mobile__desc">Отвечай на вопросы викторины с вариантами ответов.</p>
-                        <a href="#" class="mobile__btn">Играть!</a>
+                        <a href="#" class="mobile__btn quiz-start-btn">Играть!</a>
                     </div>                    
                 </div>
             </div>
@@ -257,6 +257,13 @@
             </div>
         </div>
     </section>
+    <div id="quiz-modal" class="quiz-modal hidden">
+  <div class="quiz-modal-overlay"></div>
+  <div class="quiz-modal-content">
+    <button type="button" class="quiz-close-btn" aria-label="Закрыть">&times;</button>
+    <div id="quiz-container"></div>
+  </div>
+    </div>
     <footer class="footer center">
         <div class="footer__content">
             <p>Все права защищены.</p>
@@ -264,7 +271,7 @@
 
     </footer>
 
-    <script>
+    <script src="hw-7.js">
         
     </script>
 </body>
