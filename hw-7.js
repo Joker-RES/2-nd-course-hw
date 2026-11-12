@@ -1,235 +1,307 @@
-const quiz = [
-    {
-        question: "Какой цвет небо?",
-        options: ["1. Красный", "2. Синий", "3. Зеленый"],
-        correctAnswer: 2
-    },
-    {
-        question: "Сколько дней в неделе?",
-        options: ["1. Шесть", "2. Семь", "3. Восемь"],
-        correctAnswer: 2
-    },
-    {
-        question: "Сколько у человека пальцев на одной руке?",
-        options: ["1. Четыре", "2. Пять", "3. Шесть"],
-        correctAnswer: 2
-    }
-];
+// ИГРА 1: Угадай число
 
-// Находим все кнопки "Играть!" с классом quiz-start-btn
-const startButtons = document.querySelectorAll('.quiz-start-btn');
+// Находим кнопки первой игры (и в десктопной, и в мобильной версии)
+const guessButtons = document.querySelectorAll('.guess-start-btn');
 
-startButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        runQuizWithPrompt();
+guessButtons.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        event.preventDefault(); // чтобы не «прыгала» страница из-за href="#"
+        runGuessGame();
     });
 });
 
-function runQuizWithPrompt() {
-    let score = 0;
+function runGuessGame() {
+    // Загадываем случайное число от 1 до 100
+    const secretNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
 
-    for (let i = 0; i < quiz.length; i++) {
-        const q = quiz[i];
-        
-        // Формируем текст вопроса с вариантами
-        const questionText = `${q.question}\n\nВарианты:\n${q.options.join('\n')}`;
+    alert('Я загадал число от 1 до 100. Попробуй угадать!');
 
-        // Спрашиваем пользователя через prompt
-        const userAnswer = prompt(questionText);
+    while (true) {
+        const input = prompt(`Попытка № ${attempts + 1}. Введи число от 1 до 100:`);
 
-        if (userAnswer === null) {
-            // Если пользователь нажал "Отмена"
-            alert("Викторина прервана.");
+        // Пользователь нажал «Отмена» — прерываем игру
+        if (input === null) {
+            alert('Игра прервана. Загаданное число было: ' + secretNumber);
             return;
         }
 
-        // Очищаем ввод от пробелов и приводим к числу
-        const cleanAnswer = parseInt(userAnswer.trim());
+        const guess = parseInt(input.trim(), 10);
+
+        // Проверка на корректный ввод
+        if (Number.isNaN(guess) || guess < 1 || guess > 100) {
+            alert('Пожалуйста, введи целое число от 1 до 100.');
+            continue; // попытка не засчитывается
+        }
+
+        attempts++;
+
+        if (guess < secretNumber) {
+            alert(`Загаданное число БОЛЬШЕ, чем ${guess}. Попыток: ${attempts}`);
+        } else if (guess > secretNumber) {
+            alert(`Загаданное число МЕНЬШЕ, чем ${guess}. Попыток: ${attempts}`);
+        } else {
+            alert(`🎉 Победа! Ты угадал число ${secretNumber} за ${attempts} попыток!`);
+            return; // игра завершена
+        }
+    }
+}
+
+//ИГРА 2: Простая арифметика
+
+// Находим кнопки второй игры (и в десктопной, и в мобильной версии)
+const mathButtons = document.querySelectorAll('.math-start-btn');
+
+mathButtons.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        event.preventDefault(); // чтобы страница не «прыгала» из-за href="#"
+        runMathGame();
+    });
+});
+
+function runMathGame() {
+    const TOTAL_QUESTIONS = 5; // количество задач
+    let score = 0;
+
+    alert(`Привет! Я дам тебе ${TOTAL_QUESTIONS} задач на +, −, × и ÷. Поехали!`);
+
+    for (let i = 0; i < TOTAL_QUESTIONS; i++) {
+        // Генерируем случайную задачу
+        const task = generateMathTask();
+
+        // Запрашиваем ответ у пользователя
+        const input = prompt(`Задача ${i + 1} из ${TOTAL_QUESTIONS}:\n\n${task.text} = ?`);
+
+        // Пользователь нажал «Отмена» — прерываем игру
+        if (input === null) {
+            alert('Игра прервана.');
+            return;
+        }
+
+        const userAnswer = parseFloat(input.trim().replace(',', '.'));
+
+        // Проверка на корректный ввод
+        if (Number.isNaN(userAnswer)) {
+            alert('Это не похоже на число. Задача пропущена.');
+            continue;
+        }
 
         // Проверяем ответ
-        if (cleanAnswer === q.correctAnswer) {
+        if (Math.abs(userAnswer - task.answer) < 0.0001) {
             score++;
+            alert(`Верно! ${task.text} = ${task.answer}`);
+        } else {
+            alert(`Ошибка. Правильный ответ: ${task.text} = ${task.answer}`);
         }
     }
 
-    // Выводим результат через alert
-    alert(`Ты правильно ответил на ${score} из ${quiz.length} вопросов!`);
+    // Выводим итоговый результат
+    alert(`Раунд завершён! Ты решил правильно ${score} из ${TOTAL_QUESTIONS} задач.`);
+}
+
+function generateMathTask() {
+    const operations = ['+', '-', '*', '/'];
+    const operation = operations[Math.floor(Math.random() * operations.length)];
+
+    let num1, num2, text, answer;
+
+    switch (operation) {
+        case '+':
+            num1 = Math.floor(Math.random() * 50) + 1; // 1–50
+            num2 = Math.floor(Math.random() * 50) + 1;
+            answer = num1 + num2;
+            text = `${num1} + ${num2}`;
+            break;
+
+        case '-':
+            num1 = Math.floor(Math.random() * 50) + 1;
+            num2 = Math.floor(Math.random() * 50) + 1;
+            // Чтобы ответ не был отрицательным — ставим большее число первым
+            if (num2 > num1) {
+                [num1, num2] = [num2, num1];
+            }
+            answer = num1 - num2;
+            text = `${num1} - ${num2}`;
+            break;
+
+        case '*':
+            num1 = Math.floor(Math.random() * 9) + 2;  // 2–10
+            num2 = Math.floor(Math.random() * 9) + 2;
+            answer = num1 * num2;
+            text = `${num1} * ${num2}`;
+            break;
+
+        case '/':
+            num2 = Math.floor(Math.random() * 9) + 2;  // 2–10, делитель не ноль
+            answer = Math.floor(Math.random() * 9) + 2; // частное — целое 2–10
+            num1 = num2 * answer;                       // делимое гарантирует целый ответ
+            text = `${num1} / ${num2}`;
+            break;
+    }
+
+    return { text, answer };
 }
 
 
-/*Задание 1
+//ИГРА 3: Переверни текст
+// Находим кнопки третьей игры (и в десктопной, и в мобильной версии)
+const reverseButtons = document.querySelectorAll('.reverse-start-btn');
 
-const arr = [1, 5, 4, 10, 0, 3];
+reverseButtons.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        event.preventDefault(); // чтобы страница не «прыгала» из-за href="#"
+        runReverseGame();
+    });
+});
 
-for (let i = 0; i < arr.length; i++) {
-  console.log(arr[i]);
+function runReverseGame() {
+    const input = prompt('Введи любой текст — я переверну его наоборот:');
 
-  if (arr[i] === 10) {
-    break;
-  }
+    // Пользователь нажал «Отмена» — выходим
+    if (input === null) {
+        alert('Игра прервана.');
+        return;
+    }
+
+    // Если пользователь ничего не ввёл или нажал ОК с пустой строкой
+    if (input.trim() === '') {
+        alert('Ты не ввёл текст. Попробуй ещё раз!');
+        return;
+    }
+
+    const reversedText = reverseText(input);
+
+    alert(
+        `Исходный текст:\n${input}\n\n` +
+        `Перевернутый текст:\n${reversedText}`
+    );
 }
 
+function reverseText(text) {
+    // split('') разбивает строку на массив символов,
+    // reverse() переворачивает массив,
+    // join('') собирает обратно в строку
+    return text.split('').reverse().join('');
+}
+
+
+
+/*Задание1
+const str = 'js';
+const upperStr = str.toUpperCase();
+console.log(upperStr);  //'JS'
 */
 
 /*Задание 2
-const arr = [1, 5, 4, 10, 0, 3];
-let index = -1;
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] === 4) {
-    index = i;
-    break;
-  }
+function filterByPrefix(arr, prefix) {
+  const lowerPrefix = prefix.toLowerCase();
+  return arr.filter(item => item.toLowerCase().startsWith(lowerPrefix));
 }
 
-console.log(index);
+const words = ['MicrosoftCompany', 'Microsoft', 'MICROSOFT', 'Company', 'microsoftCompany', 'mIcRoSoFtCoMpAnY'];
+console.log(filterByPrefix(words, 'microsoft')); 
+// Ответ: ['MicrosoftCompany', 'Microsoft', 'MICROSOFT', 'microsoftCompany', 'mIcRoSoFtCoMpAnY']
 */
 
 /*Задание 3
-const arr = [1, 3, 5, 10, 20];
-const result = arr.join(' ');
+const num = 32.58884;
 
-console.log(result); 
+console.log('До меньшего целого:', Math.floor(num));     // 32
+console.log('До большего целого:', Math.ceil(num));     // 33
+console.log('До ближайшего целого:', Math.round(num)); // 33
+
 */
 
 /*Задание 4
-const rows = 3;
-const columns = 3;
-const arr = [];
+const numbers = [52, 53, 49, 77, 21, 32];
 
-for (let i = 0; i < rows; i++) {
-  arr[i] = [];
-  for (let j = 0; j < columns; j++) {
-  arr[i][j] = 1;
-  }
-}
+const min = Math.min(...numbers);
+const max = Math.max(...numbers);
 
-console.log(arr); 
+console.log('Минимальное значение:', min);   // 21
+console.log('Максимальное значение:', max); // 77
 
 */
 
 /*Задание 5
-const arr = [1, 1, 1];
-arr.push(2, 2, 2);
+function printRandomNumber() {
+  const randomNum = Math.floor(Math.random() * 10) + 1;
+  console.log(randomNum);
+}
 
-console.log(arr);
+printRandomNumber();
+
 */
 
 /*Задание 6
-const arr = [9, 8, 7, 'a', 6, 5];
-arr.sort() 
-  
-console.log('После сортировки:', arr); 
-const filteredArr = arr.filter(item => item !== 'a');
-console.log('Итоговый массив:', filteredArr); 
+function generateRandomArray(num) {
+  const length = Math.floor(num / 2);
+  const result = [];
+
+  for (let i = 0; i < length; i++) {
+    result.push(Math.floor(Math.random() * (num + 1)));
+  }
+
+  return result;
+}
+
+console.log(generateRandomArray(9)); // ответ из 4 элементов
 
 */
 
 /*Задание 7
-const arr = [9, 8, 7, 6, 5];
+function getRandomInRange(min, max) {
+  // Гарантируем, что min <= max (на случай, если числа перепутали)
+  const bigger = Math.max(min, max);
+  const smaller = Math.min(min, max);
 
-const userInput = prompt('Угадай число из массива [9, 8, 7, 6, 5]:');
-const answeredNumber = Number(userInput);
-
-if (arr.includes(answeredNumber)) {
-  alert('Угадал');
-} else {
-  alert('Не угадал');
+  return Math.floor(Math.random() * (bigger - smaller + 1)) + smaller;
 }
-*/
+
+console.log(getRandomInRange(-10, 10));
+
 
 /*Задание 8
-const str = 'abcdef';
+const currentDate = new Date();
+console.log(currentDate);
 
-const reversed = str.split('').reverse().join('');
-
-console.log(reversed);
 */
 
 /*Задание 9
-const arr = [[1, 2, 3], [4, 5, 6]];
-const flattened = arr.flat();
+const currentDate = new Date();
 
-console.log(flattened);
+const futureDate = new Date(currentDate);
+futureDate.setDate(currentDate.getDate() + 73);
+// в копию переменной добавляем 73 дня с помощью setDate()
+console.log(futureDate);
+
 */
 
 /*Задание 10
-const numbers = [3, 7, 2, 9, 5];
+function formatRussianDate(date) {
+  const months = [
+    'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
+    'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
+  ];
 
-for (let i = 0; i < numbers.length - 1; i++) {
-  const real = numbers[i];
-  const next = numbers[i + 1];
-  const sum = real + next;
+  const weekdays = [
+    'воскресенье', 'понедельник', 'вторник', 'среда',
+    'четверг', 'пятница', 'суббота'
+  ];
 
-  console.log(`Сумма элемента ${real} (индекс ${i}) и следующего ${next} (индекс ${i + 1}): ${sum}`);
-}
-*/
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+  const weekday = weekdays[date.getDay()];
 
-/*Задание 11
-const input = [2, 4, 5, 7, 9];
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  const seconds = String(date.getSeconds()).padStart(2, '0');
 
-function squares(numbers) {
-  return numbers.map(num => num * num);
-}
-
-const result = squares(input);
-
-console.log(result);
-*/
-
-/*Задание 12
-const input = ['стол', 'табурет', 'кресло', 'диван'];
-
-function wordLengths(words) {
-  return words.map(word => word.length);
+  return `Дата: ${day} ${month} ${year} — это ${weekday}.\nВремя: ${hours}:${minutes}:${seconds}`;
 }
 
-const result = wordLengths(input);
 
-console.log(result);
-*/
+console.log(formatRussianDate(new Date()));
 
-/*Задание 13
-const input = [3, -1, 0, -7, 5, -2, 10];
-function negativeNumbers(numbers) {
-  return numbers.filter(num => num < 0);
-}
-
-const result = negativeNumbers(input);
-
-console.log(result);
-*/
-
-/*Задание 14
-// 1. Генерируем исходный массив из 10 чисел в диапазоне от 0 до 10
-const originalArray = [];
-for (let i = 0; i < 10; i++) {
-  // Math.random() даёт число от 0 до 1, умножаем на 10 и округляем до целого
-  const randomNum = Math.floor(Math.random() * 11); // *11, чтобы включать и 10
-  originalArray.push(randomNum);
-}
-
-// 2. Фильтруем чётные значения с помощью filter()
-const evenNumbers = originalArray.filter(num => num % 2 === 0);
-
-// 3. Выводим оба массива в консоль
-console.log('Исходный массив:', originalArray);
-console.log('Массив с чётными значениями:', evenNumbers);
-*/
-
-/*Задание 15
-
-const numbers = [];
-for (let i = 0; i < 6; i++) {
-  const randomNum = Math.floor(Math.random() * 10) + 1; 
-  numbers.push(randomNum);
-}
-
-const sum = numbers.reduce((acc, current) => acc + current, 0);
-
-const average = sum / numbers.length;
-
-console.log('Массив:', numbers);
-console.log('Сумма:', sum);
-console.log('Среднее арифметическое:', average);
 */

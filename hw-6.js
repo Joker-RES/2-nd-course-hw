@@ -26,36 +26,51 @@ startButtons.forEach(btn => {
 });
 
 function runQuizWithPrompt() {
-    let score = 0;
+  let score = 0;
 
-    for (let i = 0; i < quiz.length; i++) {
+  for (let i = 0; i < quiz.length; i++) {
         const q = quiz[i];
-        
-        // Формируем текст вопроса с вариантами
-        const questionText = `${q.question}\n\nВарианты:\n${q.options.join('\n')}`;
+        while (true) {         
+          // Формируем текст вопроса с вариантами
+          const questionText = `${q.question}\n\nВарианты:\n${q.options.join('\n')}`;
 
-        // Спрашиваем пользователя через prompt
-        const userAnswer = prompt(questionText);
+          // Спрашиваем пользователя через prompt
+          const userAnswer = prompt(questionText);
 
-        if (userAnswer === null) {
+          if (userAnswer === null) {
             // Если пользователь нажал "Отмена"
             alert("Викторина прервана.");
             return;
-        }
+          }
 
-        // Очищаем ввод от пробелов и приводим к числу
-        const cleanAnswer = parseInt(userAnswer.trim());
+          // Очищаем ввод от пробелов и приводим к числу
+          const cleanAnswer = parseInt(userAnswer.trim());
+          
+          // Проверка: не пустой ли ввод и есть ли цифра
+          if (!userAnswer.trim()) {
+            alert("Пожалуйста, введите номер варианта (1, 2 или 3).");
+            continue; // запрашиваем ответ снова для этого же вопроса
+          }
 
-        // Проверяем ответ
-        if (cleanAnswer === q.correctAnswer) {
+          // Проверка: число ли это и попадает ли в диапазон вариантов
+          if (Number.isNaN(cleanAnswer) || cleanAnswer < 1 || cleanAnswer > q.options.length) {
+            alert(`Пожалуйста, введите корректный номер варианта: от 1 до ${q.options.length}.`);
+            continue;
+          } 
+
+          // Проверяем ответ
+          if (cleanAnswer === q.correctAnswer) {
             score++;
+          }
+          break; // переходим к следующему вопросу
         }
-    }
+  }  
 
-    // Выводим результат через alert
-    alert(`Ты правильно ответил на ${score} из ${quiz.length} вопросов!`);
-}
-
+    
+  // Выводим результат через alert
+  alert(`Ты правильно ответил на ${score} из ${quiz.length} вопросов!`);
+}  
+  
 
 /*Задание 1
 
@@ -199,6 +214,7 @@ const result = negativeNumbers(input);
 
 console.log(result);
 */
+
 
 /*Задание 14
 // 1. Генерируем исходный массив из 10 чисел в диапазоне от 0 до 10
