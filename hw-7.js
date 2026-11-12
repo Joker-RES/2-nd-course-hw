@@ -305,3 +305,6 @@ function formatRussianDate(date) {
 console.log(formatRussianDate(new Date()));
 
 */
+
+
+
