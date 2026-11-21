@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0; 
+}
+
+.decision {
+    width: auto;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/фон.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.instruction {    
+    padding-top: 120px;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    padding-bottom: 24px;
+    text-align: center;
+}
+
+.text-paragraph {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+}
+
+.dynamic-title {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 64px;   
+    text-align: center;
+}
+
+.description{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+}
+
+.descript {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+}
+.toggle-btn {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    width: 350px;
+
+    background-color: #202027;
+    color: #FFFFFF;
+    gap: 10px;
+    border-width: 1px;
+    padding-top: 18px;
+    padding-right: 64px;
+    padding-bottom: 18px;
+    padding-left: 64px;
+    border-radius: 60px;
+    border: 1px solid #202027;
+
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 142%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.color-btn {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    width: 350px;
+
+    background-color: #202027;
+    color: #FFFFFF;
+    gap: 10px;
+    border-width: 1px;
+    padding-top: 18px;
+    padding-right: 64px;
+    padding-bottom: 18px;
+    padding-left: 64px;
+    border-radius: 60px;
+    border: 1px solid #202027;
+
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 142%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.change-text-btn {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    width: 350px;
+
+    background-color: #202027;
+    color: #FFFFFF;
+    gap: 10px;
+    border-width: 1px;
+    padding-top: 18px;
+    padding-right: 64px;
+    padding-bottom: 18px;
+    padding-left: 64px;
+    border-radius: 60px;
+    border: 1px solid #202027;
+
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 142%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.add-element-btn {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    width: 400px;
+
+    background-color: #202027;
+    color: #FFFFFF;
+    gap: 10px;
+    border-width: 1px;
+    padding-top: 18px;
+    padding-right: 64px;
+    padding-bottom: 18px;
+    padding-left: 64px;
+    border-radius: 60px;
+    border: 1px solid #202027;
+
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 142%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.remove-element-btn {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    width: 400px;
+
+    background-color: #202027;
+    color: #FFFFFF;
+    gap: 10px;
+    border-width: 1px;
+    padding-top: 18px;
+    padding-right: 64px;
+    padding-bottom: 18px;
+    padding-left: 64px;
+    border-radius: 60px;
+    border: 1px solid #202027;
+
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 142%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button-section {
+    width: auto;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-image: url(./img/фон.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
